@@ -1,0 +1,98 @@
+body {
+    /* Esto añade un margen automático solo donde están los botones del móvil */
+    padding-bottom: env(safe-area-inset-bottom);
+    padding-top: env(safe-area-inset-top);
+}
+/* Contenedor principal para posicionar flechas */
+.contenedor-carrusel-padre {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    height: 100%;
+}
+
+/* La ventana que oculta lo que sobra */
+.carrusel-ventana {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+/* La fila que contiene los productos */
+.carrusel-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out; /* Animación suave */
+    gap: 20px; /* Espacio entre camisas */
+}
+
+/* Tamaño de las tarjetas */
+.tarjeta-producto {
+    width: 30%; /* Ancho de cada camisa */
+    flex-shrink: 0;   /* Evita que se aplasten */
+    height: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+/* Estilo de las flechas */
+.btn-flecha {
+    width: 40px;
+    cursor: pointer;
+    z-index: 10;
+    transition: scale 0.2s;
+}
+@media (min-width: 300px) and (max-width: 425px){
+    .btn-flecha {
+        width: 20px;
+        padding: 10px;
+    }
+    /* Tamaño de las tarjetas */
+    .tarjeta-producto {
+        width: 100%;  
+    }
+}
+.img-plan{
+    height: 80%;
+    border-radius: 15px 15px 0px 0px;
+    overflow: hidden;
+    margin-top: 5px;
+    box-shadow: 0.5px 0.5px 10px  black;
+}
+.info{
+    font-size: 14px;
+    box-shadow: 0.5px 0.5px 10px  black;
+    height: 15%;
+    background-color: rgb(26, 25, 25);
+    font-size: 11px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.info > *{
+    padding: 5px;
+}
+.info .p-descripcion{
+    font-weight: 100;
+    color: white;
+}
+.btn-whatsapp{
+    text-align: center;
+    align-items: center;
+    font-weight: 700;
+    color: white;
+    width: 80%;
+    background-color: green;
+    border-radius: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.p-descripcion{
+    font-weight: 100;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.btn-flecha:hover { scale: 1.1; }

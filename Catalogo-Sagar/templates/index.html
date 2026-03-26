@@ -1,0 +1,145 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>registrarse</title>
+    <link rel="stylesheet" href="/static/css/sing-up/s-main-general.css">
+    <link rel="icon" type="image/png" href="/static/image/logo/icon.png">
+    <link rel="apple-touch-icon" href="/static/image/logo/icon.png">
+    <style>
+        body {
+            /* Esto añade un margen automático solo donde están los botones del móvil */
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-top: env(safe-area-inset-top);
+        }
+    </style>
+</head>
+<body>
+    <!-- Registro de usuario -->
+        <button onclick="autenticaradmin()" class="btn_admin">👤</button>
+        <dialog class="dialog_autentic" id="dialog">
+            <form action="/administrador_supermo_unico" method="post">
+            <section class="section">
+                <h1 class="title-main">Crea tu Perfil</h1>
+            </section>
+            <section class="section">
+                <div>
+                    <input type="email" id="email" name="email" required placeholder="Correo">
+                </div>
+            </section>
+            <section class="section">
+                <div>
+                    <input type="password" id="password" name="password" autocomplete="password" required placeholder="contraseña">
+                </div>
+            </section>
+            <section class="section">
+                <div class="boton-siguiente">
+                    <button type="submit" id="Enviar">Enviar</button>
+                    <button id="Cerrar">Cerrar</button>
+                </div>
+            </section>
+            </form>
+        </dialog>
+    <main>
+        
+        
+        <!-- Formulario del usuario...........-->
+        <div class="register">
+            <section class="section">
+                <h1 class="title-main">Crea tu Perfil</h1>
+            </section>
+            <section class="section">
+                <div>
+                    <label>Escriba su nombre</label>
+                    <input type="text" id="nombre" name="text" required placeholder="escriba su nombre y apellido">
+                </div>
+
+            </section>
+            <section class="section">
+                <div>
+                    <label>Escriba su telefono</label>
+                <input type="tel" id="telefono" name="telefono" autocomplete="tel" required placeholder="example: 9999-9999">
+                </div>
+                
+            </section>
+            <section class="section">
+                <div class="boton-siguiente">
+                    <button onclick="acceder()">Siguiente</button>
+                    <div class="div-chk">
+                        <div class="div-link"><p><input type="checkbox" class="input-chk" id="termino-chk">Revice nuestros <a href="/terminos">Términos y Condiciones</a></p></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <script src="/static/js/sing-up-js/script.js"></script>
+    <!-- Dentro de tu index.html -->
+     <script type="module">
+        // Importar desde CDN de Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyCZ0XEcKUKtbB7WiUAmaIbBf-UkqTgZYxY",
+            authDomain: "apartados-sagar-1a901.firebaseapp.com",
+            projectId: "apartados-sagar-1a901",
+            storageBucket: "apartados-sagar-1a901.firebasestorage.app",
+            messagingSenderId: "145902728046",
+            appId: "1:145902728046:web:4468fb60b5d72cd4efc77f",
+            measurementId: "G-ESJ7EXWH7Z"
+        };
+        
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+
+        // Función de login (ahora SÍ está disponible globalmente)
+        window.Enviar_auth = function() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (!email || !password) {
+                alert('Completa todos los campos');
+                return;
+            }
+            
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    const user = userCredential.user;
+                    
+                    // Lista de admins
+                    const ADMINS = [
+                        'admin@apartadossagar.com',
+                    ];
+                    
+                    // Verificar si es admin
+                    if (ADMINS.includes(user.email)) {
+                        alert('Bienvenido Admin');
+                    } else {
+                        alert('Bienvenido Usuario');
+                        window.location.href = '/';
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    
+                    // Mensajes de error en español
+                    if (error.code === 'auth/invalid-credential') {
+                        alert('Email o contraseña incorrectos');
+                    } else if (error.code === 'auth/user-not-found') {
+                        alert('Usuario no encontrado');
+                    } else if (error.code === 'auth/wrong-password') {
+                        alert('Contraseña incorrecta');
+                    } else if (error.code === 'auth/too-many-requests') {
+                        alert('Demasiados intentos. Espera un momento.');
+                    } else {
+                        alert('Error: ' + error.message);
+                    }
+                });
+        }
+        document.getElementById('Enviar').addEventListener('click', Enviar_auth);
+     </script>
+</body>
+</html>

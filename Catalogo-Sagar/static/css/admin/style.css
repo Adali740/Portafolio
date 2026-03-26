@@ -1,0 +1,73 @@
+body, header, main, footer{
+    overflow-x: hidden;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+body{
+    height: 100vh;
+}
+header{
+    min-height: 20%;
+    height: 20%;
+    background: linear-gradient(45deg in oklch, rgb(150, 0, 0), 
+    rgb(129, 17, 17), 
+    rgb(80, 1, 1), 
+    rgb(40, 5, 5),
+    black);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+.title, .operaciones{
+    min-width: 35%;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+.title{
+    justify-content: center;
+}
+.operaciones{
+    display: flex;
+    justify-content: space-around;
+}
+button{
+    width: 70px;
+    height: 30px;
+}
+main{
+    min-height: 70%;
+    height: 70%;
+    background-color: rgb(53, 53, 53);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    scrollbar-width: none;
+}
+footer{
+    min-height: 10%;
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(45deg in oklch, rgb(150, 0, 0), 
+    rgb(129, 17, 17), 
+    rgb(80, 1, 1), 
+    rgb(40, 5, 5),
+    black);
+}
+.enlace_inicio{
+    display: grid;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <title>página administradores</title>
+    <link rel="stylesheet" href="/static/css/admin/style.css">
+    <link rel="stylesheet" href="/static/css/admin/dialog.css">
+    <link rel="icon" type="image/png" href="/static/image/logo/icon.png">
+    <link rel="apple-touch-icon" href="/static/image/logo/icon.png">
+    <style>
+        body {
+            /* Esto añade un margen automático solo donde están los botones del móvil */
+            padding-bottom: env(safe-area-inset-bottom);
+            padding-top: env(safe-area-inset-top);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="title">
+            <h1>Bienvenidos</h1>
+        </div>
+        <div class="operaciones">
+            <fieldset>
+                <legend>Operaciones</legend>
+                <button id="insertar">Insertar</button>
+                <button id="eliminar">Eliminar</button>
+                <button id="actualizar">Actualizar</button>
+            </fieldset>
+        </div>
+    </header>
+    <main>
+        <dialog id="dialog" class="lista_imagenes">
+            <h2>Tabla de imagenes</h2>
+            <button id="btn_mostrar">Mostrar</button>
+            <dialog id="mostrar_imagenes">
+            </dialog>
+        </dialog>
+        <dialog id="modal-actualizar">
+            <label for="Actualizar">Ingrese el id de la imagen</label><br>
+            <input type="text" name="Actualizar" id="id_actualizar"><br>
+            <label for="descripcion">acutualizar descripcion</label>
+            <input type="text" name="descripcion" id="descripcion">
+            <button id="btn_actualizar">Actualizar</button>
+        </dialog>
+        <!-- Dialog para insertar............................. -->
+        <dialog id="modal-insertar">
+                <h2>Operacion insertar</h2>
+                <!-- siglas: c-> camisa, h-> hombre -->
+                <Label>ingrese el Area</Label><br>
+                <select id="select_area" class="select_area">
+                    <option value="camisas">camisas</option>
+                    <option value="pantalones">pantalones</option>
+                    <option value="joyeria">joyeria</option>
+                    <option value="perfumeria">perfumeria</option>
+                    <option value="calzado">calzado</option>
+                    <option value="vestidos">vestidos</option>
+                </select><br>
+                <Label>ingrese el genero</Label><br>
+                <select id="select_genero" class="select_genero">
+                    <option value="hombres/">hombre</option>
+                    <option value="mujeres/">mujer</option>
+                    <option value="null">null</option>
+                </select><br>
+                <Label>ingrese la imagen</Label><br>
+                <input type="file" name="file" id="file_image" accept="image/*"><br>
+                <Label>ingrese la descripcion</Label><br>
+                <input type="text" name="text" id="text_descripcion"><br>
+                <button id="btn_insertar">Insertar</button>
+        </dialog>
+        <dialog id="modal-eliminar">
+            <div>
+                <label for="eliminar">Elija un id por eliminar</label><br>
+                <input type="text" name="eliminar" id="id_eliminar">
+            </div>
+            <Button id="btn_eliminar">Eliminar</Button>
+        </dialog>
+    </main>
+    <footer>
+        <a href="/inicio" id="volver_inicio" class="enlace_inicio">Volver a Inicio</a>
+    </footer>
+    <script type="module" src="/static/js/admin/general/abrir_modal.js"></script>
+    <script type="module" src="/static/js/admin/insertar/insertar.js"></script>
+    <script type="module" src="/static/js/admin/eliminar/eliminar.js"></script>
+    <script type="module" src="/static/js/admin/actualizar/actualizar.js"></script>
+</body>
+</html>

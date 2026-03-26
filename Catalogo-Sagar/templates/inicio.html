@@ -1,0 +1,414 @@
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenidos a Sagar, Escoja su estilo</title>
+    <link rel="stylesheet" href="/static/css/inicio-css/responsive/i-main-general.css">
+    <link rel="stylesheet" href="/static/css/inicio-css/styles.css">
+    <link rel="stylesheet" href="/static/css/inicio-css/Carrucel.css">
+    <link rel="icon" type="image/png" href="/static/image/logo/icon.png">
+    <link rel="apple-touch-icon" href="/static/image/logo/icon.png">
+    <style>
+    #main-header {
+        transition: transform 0.5s ease-in-out; /* Animación suave */
+    }
+
+    /* Esta clase ocultará el header moviéndolo hacia arriba */
+    .header-hidden {
+        transform: translateY(-100%);
+    }
+    </style>
+</head>
+<body>
+    <header id="main-header">
+        <div class="icon-logo">
+            <img src="/static/image/logo/logo-sagar.png" alt="Logo Sagar" class="logo">
+        </div>
+        <div class="title-header">
+            <h1 class="title-main-page">Moda, Estilo y Gusto solo en Sagar</h1>
+        </div>
+        <nav class="nav-header">
+            <section class="S-buscador">
+                <input type="text" class="to-search" id="to-search"><input type="button" class="search" onclick="search()" value="Buscar">
+            </section>
+            <section class="S-A">
+                <div class="div-profile">
+                    <label class="label-profile" for="profile">Tu Perfil:</label><p class="p-profile-header"><a href="/singup" for="profile" id="id_usuario" class="profile-a">visitante</a> 👤</p>
+                </div>
+            </section>
+        </nav>
+    </header>
+    <main>
+        <dialog id="main-dialog-busqueda">
+            <div class="div-dialog-busqueda">
+                <div class="dialog-div-contenido">
+                    <h1 class="dialog-h1-titulo">busqueda</h1>
+                    <p class="p-dialog-busqueda">se encontrado los siguientes apartados</p>
+                </div>
+                <div id="dialog-div-img">
+
+                </div>
+                <div class="dialog-div-contenido">
+                    <button id="button-dialog-cerrar" onclick="btn_cerrar()">Cerrar</button>
+                </div>
+            </div>
+        </dialog>
+        <div class="div-camisas">
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="div-center">
+                <section class="S-C-H">
+                    <h2 class="section-title-general">Estilos de Camisas para Caballeros</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-camisas-hombres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-camisas-hombres">
+                                {% for item in productos %}
+                                
+                                    {% if item.sector == 'camisas' and item.genero == 'hombres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-camisas-hombres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+                <section class="S-C-M">
+                    <h2 class="section-title-general">Estilos de Camisas para Damas</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-camisas-mujeres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-camisas-mujeres">
+                                {% for item in productos %}
+                                    {# AQUÍ ESTÁ EL TRUCO: Solo mostramos si el cubo coincide #}
+                                    {% if item.sector == 'camisas' and item.genero == 'mujeres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-camisas-mujeres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="div-vestido">
+            <!-- Seccion de Zapatos -->
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="div-center">
+                <section class="S-P-M">
+                    <h2 class="section-title-general">Estilos de Vestidos para Damas</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-Vestidos-mujeres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-Vestidos-mujeres">
+                                {% for item in productos %}
+                                    {% if item.sector == 'vestidos' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-Vestidos-mujeres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="div-pantalones">
+            <!-- Seccion de pantaloness -->
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="div-center">
+                <section class="S-P-H">
+                    <h2 class="section-title-general">Estilos de pantalones para Caballeros</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-pantalones-hombres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-pantalones-hombres">
+                                {% for item in productos %}
+                                    {% if item.sector == 'pantalones' and item.genero == 'hombres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-pantalones-hombres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+                <section class="S-P-M">
+                    <h2 class="section-title-general">Estilos de pantalones para Damas</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-pantalones-mujeres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-pantalones-mujeres">
+                                {% for item in productos %}
+                                    {% if item.sector == 'pantalones' and item.genero == 'mujeres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 9458-1112
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-camisas-mujeres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="div-calzado">
+            <!-- Seccion de pantaloness -->
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="div-center">
+                <section class="S-P-H">
+                    <h2 class="section-title-general">Estilos de Calzados para Caballeros</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-calzado-hombres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-calzado-hombres">
+                                {% for item in productos %}
+                                    {% if item.sector == 'calzado' and item.genero == 'hombres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-pantalones-hombres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+                <section class="S-P-M">
+                    <h2 class="section-title-general">Estilos de Calzados para Damas</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-calzado-mujeres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-calzado-mujeres">
+                                {% for item in productos %}
+                                    {% if item.sector == 'calzado' and item.genero == 'mujeres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-camisas-mujeres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="div-joyeria">
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <!-- Seccion de joyeria hombres y mujeres -->
+            <div class="div-center">
+                <section class="S-J-H">
+                    <h2 class="section-title-general">Joyeria para Caballeros</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-joyeria-hombres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-joyeria-hombres">
+                                {% for item in productos %}
+                                    {# AQUÍ ESTÁ EL TRUCO: Solo mostramos si el cubo coincide #}
+                                    {% if item.sector == 'joyeria' and item.genero == 'hombres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-joyeria-hombres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+                <section class="S-J-M">
+                    <h2 class="section-title-general">Joyeria para Damas</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-camisas-mujeres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-camisas-mujeres">
+                                {% for item in productos %}
+                                    {# AQUÍ ESTÁ EL TRUCO: Solo mostramos si el cubo coincide #}
+                                    {% if item.sector == 'joyeria' and item.genero == 'mujeres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-camisas-mujeres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="div-perfumeria">
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <div class="difuminado"></div>
+            <!-- Seccion de joyeria hombres y mujeres -->
+            <div class="div-center">
+                <section class="S-PR-H">
+                    <h2 class="section-title-general">Lociones para Caballeros</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-Lociones-hombres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-Lociones-hombres">
+                                {% for item in productos %}
+                                    {# AQUÍ ESTÁ EL TRUCO: Solo mostramos si el cubo coincide #}
+                                    {% if item.sector == 'perfumeria' and item.genero == 'hombres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-Lociones-hombres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+                </section>
+                <section class="S-PR-M">
+                    <h2 class="section-title-general">Perfumes para Damas</h2>
+                    <div class="contenedor-carrusel-padre">
+                        <img src="/static/image/flechas/arrow_left.png" onclick="moverCarrusel('track-Perfumes-mujeres', -1)" class="btn-flecha left">
+                        <div class="carrusel-ventana">
+                            <div class="carrusel-track" id="track-Perfumes-mujeres">
+                                {% for item in productos %}
+                                    {% if item.sector == 'perfumeria' and item.genero == 'mujeres/' %}
+                                    <div class="tarjeta-producto">
+                                        <img class="img-plan" src="{{ item.url_image }}" alt="{{ item.descripcion }}">
+                                        <div class="info">
+                                            <p class="p-descripcion">{{ item.descripcion }}</p>
+                                            <a href="https://wa.me/50694581112?text=Hola!%20Me%20interesa%20esta%20prenda:%20{{ item.descripcion }}%20Link:%20{{ item.url_image }}" 
+                                            target="_blank" 
+                                            class="btn-whatsapp">
+                                            Preguntar por WhatsApp
+                                            </a>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <img src="/static/image/flechas/arrow_right.png" onclick="moverCarrusel('track-Perfumes-mujeres', 1)" class="btn-flecha right">
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="div-title-contact">
+            <h1 class="h1-title">Nuestros Contactos:</h1>
+        </div>
+        <nav class="nav-info-contact">
+            <div class="div-center-footer">
+                <ul>
+                    <li>Whatsaap: <a class="a-gmail" href="https://wa.me/50694581112">9458-1112</a></li>
+                    <li>Correo: <a class="a-gmail" href="mailto:sagar.essentials.hn@gmail.com?subject=Consulta desde la web&body=">sagar.essentials.hn@gmail.com</a></li>
+                </ul>
+            </div>
+        </nav>
+    </footer>
+    <script type="module" src="/static/js/inicio-js/usuario.js"></script>
+    <script src="/static/js/inicio-js/busqueda-dialog.js"></script>
+    <script src="/static/js/inicio-js/carrusel.js"></script>
+</body>
+</html>

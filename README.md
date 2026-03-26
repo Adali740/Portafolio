@@ -43,4 +43,4 @@ Investigación activa sobre cómo hacer que la Inteligencia Artificial sea acces
 * **Infraestructura:** vercel.
 
 ---
-**Contacto:** [adalig930@gmail.com](mailto:adalig930@gmail.com) | [LinkedIn](www.linkedin.com/in/darwin-adali-garcia-dev)
+**Contacto:** [adalig930@gmail.com](mailto:adalig930@gmail.com) | [LinkedIn](https://www.linkedin.com/in/darwin-adali-garcia-dev)

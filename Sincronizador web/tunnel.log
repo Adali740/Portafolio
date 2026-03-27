@@ -1,0 +1,120 @@
+2026-03-22T14:59:54Z INF Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee, are subject to the Cloudflare Online Services Terms of Use (https://www.cloudflare.com/website-terms/), and Cloudflare reserves the right to investigate your use of Tunnels for violations of such terms. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps
+2026-03-22T14:59:54Z INF Requesting new quick Tunnel on trycloudflare.com...
+2026-03-22T14:59:57Z INF +--------------------------------------------------------------------------------------------+
+2026-03-22T14:59:57Z INF |  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |
+2026-03-22T14:59:57Z INF |  https://genesis-station-feedback-duo.trycloudflare.com                                    |
+2026-03-22T14:59:57Z INF +--------------------------------------------------------------------------------------------+
+2026-03-22T14:59:57Z INF Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp]
+2026-03-22T14:59:57Z INF Version 2026.1.2 (Checksum 6304f5e1c017c038fb74a02c0157b2b63d4bc1f15709c639fcc08cb6dbe4c126)
+2026-03-22T14:59:57Z INF GOOS: windows, GOVersion: go1.24.11, GoArch: amd64
+2026-03-22T14:59:57Z INF Settings: map[ha-connections:1 protocol:quic url:http://localhost:3000]
+2026-03-22T14:59:57Z INF cloudflared will not automatically update on Windows systems.
+2026-03-22T14:59:57Z INF Generated Connector ID: 1c9b7d9d-abca-4348-88f3-9c5a79370cfd
+2026-03-22T14:59:57Z INF Initial protocol quic
+2026-03-22T14:59:57Z INF ICMP proxy will use 192.168.1.3 as source for IPv4
+2026-03-22T14:59:57Z INF ICMP proxy will use fe80::4a1a:c26c:609c:9927 in zone Ethernet as source for IPv6
+2026-03-22T14:59:57Z INF cloudflared does not support loading the system root certificate pool on Windows. Please use --origin-ca-pool <PATH> to specify the path to the certificate pool
+2026-03-22T14:59:57Z INF ICMP proxy will use 192.168.1.3 as source for IPv4
+2026-03-22T14:59:57Z INF Tunnel connection curve preferences: [X25519MLKEM768 CurveP256] connIndex=0 event=0 ip=198.41.200.23
+2026-03-22T14:59:57Z INF ICMP proxy will use fe80::4a1a:c26c:609c:9927 in zone Ethernet as source for IPv6
+2026-03-22T14:59:57Z INF Starting metrics server on 127.0.0.1:20241/metrics
+2026-03-22T14:59:58Z INF Registered tunnel connection connIndex=0 connection=8e0c3c86-d926-431e-a137-0501f574e1fd event=0 ip=198.41.200.23 location=mia04 protocol=quic
+2026-03-22T15:00:04Z ERR  error="stream 9 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:00:04Z ERR Request failed error="stream 9 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:01:03Z ERR  error="stream 45 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:01:03Z ERR Request failed error="stream 45 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:01:20Z ERR  error="stream 73 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:01:20Z ERR Request failed error="stream 73 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:01:58Z ERR  error="stream 105 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:01:58Z ERR Request failed error="stream 105 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:02:23Z ERR  error="stream 113 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:02:23Z ERR Request failed error="stream 113 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:17:06Z ERR  error="stream 161 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:17:06Z ERR Request failed error="stream 161 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:17:13Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:17:13Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=wgn7ty72&sid=LxphBt5nrM53L-tkAAAK event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:22Z ERR  error="stream 289 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:22Z ERR Request failed error="stream 289 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:25Z ERR  error="stream 317 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:25Z ERR Request failed error="stream 317 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 325 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 325 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 329 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 329 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 333 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 333 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 337 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 337 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 341 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 341 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 345 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 345 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 349 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 349 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 353 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 353 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 357 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 357 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:26Z ERR  error="stream 361 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:26Z ERR Request failed error="stream 361 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:27Z ERR  error="stream 365 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:27Z ERR Request failed error="stream 365 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:27Z ERR  error="stream 369 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:27Z ERR Request failed error="stream 369 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:27Z ERR  error="stream 321 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:27Z ERR Request failed error="stream 321 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:30Z ERR  error="stream 393 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:30Z ERR Request failed error="stream 393 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T15:27:53Z ERR  error="stream 421 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T15:27:53Z ERR Request failed error="stream 421 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:23Z ERR  error="stream 509 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:23Z ERR Request failed error="stream 509 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:30Z ERR  error="stream 501 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:30Z ERR Request failed error="stream 501 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:30Z ERR  error="stream 533 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:30Z ERR Request failed error="stream 533 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:30Z ERR  error="stream 545 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:30Z ERR Request failed error="stream 545 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:32Z ERR  error="stream 557 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:32Z ERR Request failed error="stream 557 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:32Z ERR  error="stream 561 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:32Z ERR Request failed error="stream 561 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/Jim_Eliot.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:33Z ERR  error="stream 493 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:33Z ERR Request failed error="stream 493 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:03:48Z ERR  error="Incoming request ended abruptly: context canceled" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:03:48Z ERR Request failed error="Incoming request ended abruptly: context canceled" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=y4v4udi0&sid=6i2gq_AowSeB-oZaAAAa event=0 ip=198.41.200.23 type=http
+2026-03-22T16:04:06Z ERR  error="stream 897 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:04:06Z ERR Request failed error="stream 897 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:07:08Z ERR  error="stream 937 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:07:08Z ERR Request failed error="stream 937 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:11:34Z ERR  error="stream 981 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:11:34Z ERR Request failed error="stream 981 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:15:35Z ERR  error="stream 1021 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:15:35Z ERR Request failed error="stream 1021 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:19:33Z ERR  error="stream 1097 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:19:33Z ERR Request failed error="stream 1097 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:23:58Z ERR  error="stream 1189 canceled by remote with error code 0" connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:23:58Z ERR Request failed error="stream 1189 canceled by remote with error code 0" connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/d.mp4 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:24Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:24Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zib11r4t&sid=0KnH0hc_0o4CFyAyAAAk event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:24Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:24Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zij1sex5&sid=0KnH0hc_0o4CFyAyAAAk event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:25Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:25Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zijqs501 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:26Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:26Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zj2cbp4a event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:27Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:27Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zile3ih3 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:28Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:28Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zj3vokyl event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:30Z ERR  error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 event=1 ingressRule=0 originService=http://localhost:3000
+2026-03-22T16:42:30Z ERR Request failed error="Unable to reach the origin service. The service may be down or it may not be responding to traffic from cloudflared: dial tcp [::1]:3000: connectex: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión." connIndex=0 dest=https://genesis-station-feedback-duo.trycloudflare.com/socket.io/?EIO=4&transport=polling&t=zinb7v92 event=0 ip=198.41.200.23 type=http
+2026-03-22T16:42:30Z INF Initiating graceful shutdown due to signal terminated ...
+2026-03-22T16:42:30Z ERR failed to run the datagram handler error="context canceled" connIndex=0 event=0 ip=198.41.200.23
+2026-03-22T16:42:30Z ERR failed to serve tunnel connection error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.23
+2026-03-22T16:42:30Z ERR Serve tunnel error error="accept stream listener encountered a failure while serving" connIndex=0 event=0 ip=198.41.200.23
+2026-03-22T16:42:30Z INF Retrying connection in up to 1s connIndex=0 event=0 ip=198.41.200.23
+2026-03-22T16:42:30Z ERR Connection terminated connIndex=0
+2026-03-22T16:42:30Z ERR no more connections active and exiting
+2026-03-22T16:42:30Z INF Tunnel server stopped
+2026-03-22T16:42:30Z INF Metrics server stopped

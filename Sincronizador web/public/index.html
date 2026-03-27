@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sincronizador de Video</title>
+    <style>
+        body { background: #111; color: white; text-align: center; font-family: sans-serif; }
+        video { width: 80%; border: 2px solid #444; margin-top: 20px; }
+        .controls { margin-top: 10px; }
+        button { padding: 10px 20px; cursor: pointer; background: #e67e22; border: none; color: white; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h2>Sincronizador de Video</h2>
+    <p id="anfitrion">receptor</p>
+    
+    <video id="myVideo" src="./d.mp4"></video>
+
+    <div class="controls">
+        <input type="file"  id="fileInput" accept="video/*">
+        <button onclick="toggleFullScreen()">Pantalla Completa</button>
+        <button onclick="playVideo()">Reproducir</button>
+        <button onclick="pauseVideo()">Pausar</button>
+        <button onclick="Anfitrion()">Anfitrion</button>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        const socket = io();
+
+        let anfitrion = document.getElementById('anfitrion');
+        
+        function Anfitrion() {
+            
+            const respuesta = confirm('Quiere ser el anfitrion?');
+            if (respuesta) {
+                anfitrion.textContent = 'anfitrion';
+                console.log('se detecto la accion' + anfitrion.textContent);
+            } else if (!respuesta) {
+                anfitrion.textContent = 'receptor';
+            }
+        }
+
+        // variables del elm video y el type="file"
+        const video = document.getElementById('myVideo');
+        const fileInput = document.getElementById('fileInput');
+
+        // Cuando el type="file" cambia de file manda una solicitud post
+        fileInput.addEventListener('change', () => {
+            // Obtener el primer archivo.
+            let file = fileInput.files[0];
+
+            // Obtener el nombre del file
+            file = file.name;
+            
+            // enviar peticion con el archivo
+            const response = fetch('/CopiarArchivo', {
+                method: 'POST',
+                body: JSON.stringify({filename: file}), // Converts the JS object to a JSON string
+                headers: {
+                    'Content-type': 'application/json' // Informs the server the body is JSON
+                }
+            });
+
+            // Obtener los datos
+            const datos = response.json();
+
+            // sacar insertar la url local public
+            video.src = datos.urlname; // Debe mostrar /"filename.mp4" 
+            
+            console.log('Archivo seleccionado: ' + datos.urlname);
+
+            video.play(); // play
+
+            // Emitir el cambio y la url del nombre a todos los dispositivos
+            socket.emit('video_action', { type: 'change', url: datos.urlname });
+        });
+
+        // 1. Detectar acciones locales y enviarlas al servidor
+        video.onplay = () => socket.emit('video_action', { type: 'play', time: video.currentTime });
+        video.onpause = () => socket.emit('video_action', { type: 'pause', time: video.currentTime });
+        video.onseeked = () => socket.emit('video_action', { type: 'seek', time: video.currentTime });
+        video.onended = () => {
+            console.log('Video terminado, reiniciando en todos los clientes...');
+            socket.emit('video_action', { type: 'ended' });
+        };
+
+        // 2. Recibir acciones de otros dispositivos
+        socket.on('video_action', (data) => {
+            if (data.time !== undefined && Math.abs(video.currentTime - data.time) > 0.01) {
+                video.currentTime = data.time;
+            }
+            try {
+                if (data.type === 'change') {
+                video.src = data.url;
+                console.log('se detecto la accion' + data.url);
+                video.play();
+            }
+            } catch (error) {
+                console.error('Error al procesar la acción del video:', error);
+            }
+
+            if (data.type === 'play') {
+                
+                video.play();
+            }
+            if (data.type === 'pause') {
+                
+                video.pause();
+            }
+
+            // Si el video terminó, reiniciarlo en todos los clientes
+            if (data.type === 'ended' ){
+                video.currentTime = 0; 
+                video.play(); 
+                console.log('se detecto la accion');
+                return;
+            }
+        });
+
+        // Función de Fullscreen
+        
+        function toggleFullScreen() {
+            try {
+                if (video.requestFullscreen) {
+                    video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) { // Safari
+                    video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) { // IE11
+                    video.msRequestFullscreen();
+                } else if (video.mozRequestFullScreen) { // Older Firefox
+                    video.mozRequestFullScreen();
+                } else {
+                    alert("Fullscreen API is not supported in this browser.");
+                }
+            } catch (error) {
+                console.error('Error al intentar entrar en pantalla completa:', error);
+            }
+                
+        }
+
+        function playVideo() {
+                if (anfitrion.textContent === 'receptor') return 'acceso no permitido';
+            video.play();
+        }
+        function pauseVideo() {
+                if (anfitrion.textContent === 'receptor') return 'acceso no permitido';
+            video.pause();
+        }
+    </script>
+</body>
+</html>

@@ -12,16 +12,19 @@ Este proyecto nació para resolver un problema logístico en una iglesia local: 
 
 ## Ejecución:
 
-* 1. Ejecutar **Sincrinizador-video.bat** como administrador.
+* Ejecutar **Sincrinizador-video.bat** como administrador.
 Es un fichero que ejecuta el servidor.
 
-* 2. El fichero Manda una url **via wifi**, Un túnel cifrado.
+* El fichero Manda una url **via wifi**, Un túnel cifrado.
 como ejemplo: **https://genesis-station-feedback-duo.trycloudflare.com** y crea un ventana web en la pc.
 
-* 3. Use la url en distintos dispositivos, y al reproducirse se sincronizara en todos los dispositivos.
+* Use la url en distintos dispositivos, y al reproducirse se sincronizara en todos los dispositivos.
 
-## Nota: No esta lista para un entorno en producción el cambio de video se hace manual.
-* 1. Editar al index.html.
-* 2. buscar <video id="myVideo" src="./d.mp4"></video>
-* 3. Cambiar  src="./d.mp4" por cualquier video en la carpeta public.
+## Nota:
+
+No esta lista para un entorno en producción el cambio de video se hace manual.
+
+* Editar al index.html.
+* buscar <video id="myVideo" src="./d.mp4"></video>
+* Cambiar  src="./d.mp4" por cualquier video en la carpeta public.
 

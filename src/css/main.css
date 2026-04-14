@@ -1,0 +1,68 @@
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+section{
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    width: 800px;
+    border-radius: 5px;
+    padding: 15px;
+    background-color: rgb(38, 38, 43);
+    gap: 20px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.Texto-Informe{
+    margin-left: 10px;
+}
+
+button{
+    padding: 20px;
+    background-color: white;
+    border: 0;
+    border-radius: 15px;
+    box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+}
+
+.seccion-proyectos{
+      
+}
+
+.div-elementos{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.conponente-tarjetas{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.conponente-tarjetas figure{
+    display: flex;
+    flex-direction: column;
+    width: 110px;
+    padding: 20px;
+    background-color: rgb(60, 60, 65);
+    border-radius: 5px;
+    gap: 10px;
+}
+figure:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+
+img{
+    width: 100px;
+    border-radius: 15px;
+}
